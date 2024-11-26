@@ -1,4 +1,3 @@
-import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart, removeFromCart } from "../../store/slices/cart-slices";
 
@@ -32,13 +31,13 @@ export default function ProductTile({ product }) {
         <div className="flex items-center justify-center w-full mt-5">
           <button
             onClick={
-              cart.find((item) => item.id === product.id)
+              cart.some((item) => item.id === product.id)
                 ? handleRemoveFromCart
                 : handleAddToCart
             }
             className="bg-red-950 text-white border-2 rounded-lg font-bold p-4"
           >
-            {cart.find((item) => item.id === product.id)
+            {cart.some((item) => item.id === product.id)
               ? "Remove from Cart"
               : "Add to Cart"}
           </button>
