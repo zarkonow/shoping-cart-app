@@ -14,7 +14,7 @@ export default function Cart() {
 
   console.log(cart, totalCart);
 
-  return <div>
+  return (  
     <div className="flex justify-center">
       {cart && cart.length ? (
         <>
@@ -54,5 +54,5 @@ export default function Cart() {
         </div>
       )}
     </div>
-    </div>
+     )
 }
